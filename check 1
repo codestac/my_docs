@@ -31,3 +31,34 @@ select {
   border-right: 5px solid transparent;
   border-top: 5px solid #000; /* Change the color as desired */
 }
+
+.select-wrapper {
+  position: relative;
+}
+
+.select-button {
+  padding: 10px;
+  width: 200px;
+}
+
+.dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 200px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  display: none;
+  list-style-type: none;
+  padding: 0;
+}
+
+.dropdown-list li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-list li:hover {
+  background-color: #f0f0f0;
+}
+
