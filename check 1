@@ -62,3 +62,36 @@ select {
   background-color: #f0f0f0;
 }
 
+
+/* Hide the default arrow */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+/* Apply a custom background color */
+input[type="date"] {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 4px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+/* Style the text inside the input */
+input[type="date"]::-webkit-datetime-edit {
+  color: #333;
+  padding-right: 20px; /* Add space for the icon */
+}
+
+/* Add a custom icon */
+input[type="date"]:after {
+  content: '\25B6'; /* Unicode character for a right-pointing triangle or your desired icon */
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #888;
+}
+
