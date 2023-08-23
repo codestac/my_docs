@@ -62,3 +62,26 @@ Improvement and Contribution Strategies: Committed to regularly updating the adm
 Development Plan and Progress: Currently, my development plan involves enhancing the admin dashboard's performance and usability by leveraging Angular's advanced functionalities and optimizing code structure. Progress has been made in implementing a modular and scalable architecture, enabling seamless integration of new features and facilitating future enhancements.
 
 Year-end Goals: By the end of this year, I aim to further enrich the admin dashboard with additional features, such as customizable user roles and permissions, advanced reporting and analytics, and integration with third-party tools. Additionally, I plan to actively contribute to the Angular community by sharing my experiences and insights through blog posts and participating in relevant forums and conferences.
+
+
+
+
+
+ng test --configuration=code-coverage
+
+
+"architect": {
+  "test": {
+    "builder": "@angular-devkit/build-angular:karma",
+    "options": {
+      // ... other options
+      "configurations": {
+        "code-coverage": {
+          "codeCoverage": true,
+          "browsers": "ChromeHeadless"
+        }
+      }
+    }
+  }
+}
+
