@@ -1,3 +1,23 @@
+public static boolean validateToken(String token) {
+        try {
+            Algorithm algorithm = Algorithm.RSA256(null, OKTA_PUBLIC_KEY);
+            JWTVerifier verifier = JWT.require(algorithm)
+                    .withIssuer(OKTA_ISSUER)
+                    .build();
+            
+            verifier.verify(token);
+            
+            return true; // Token is valid
+        } catch (JWTVerificationException exception) {
+            // Token verification failed
+            return false;
+        }
+    }
+
+
+
+
+
 # my_docs
 
 ```bash
