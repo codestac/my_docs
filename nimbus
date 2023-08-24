@@ -1,0 +1,24 @@
+try {
+            JWSObject jwsObject = JWSObject.parse(token);
+            Payload payload = jwsObject.getPayload();
+
+            JWSVerifier verifier = new RSASSAVerifier(RSAKey.parse(OKTA_PUBLIC_KEY));
+            if (!jwsObject.verify(verifier)) {
+                return false; // Token verification failed
+            }
+
+            JWTClaimsSet claimsSet = payload.toJWTClaimsSet();
+
+            // Validate issuer and other claims as needed
+            if (!claimsSet.getIssuer().equals(OKTA_ISSUER)) {
+                return false; // Invalid issuer
+            }
+
+            // Additional validation checks can be performed here
+            // For example, checking expiration, audience, etc.
+
+            return true; // Token is valid
+        } catch (ParseException | JOSEException e) {
+            return false; // Token parsing or verification failed
+        }
+}
